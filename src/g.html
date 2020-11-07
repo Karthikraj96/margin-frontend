@@ -1,0 +1,45 @@
+<section class="section">
+    <div class="page-width">
+      <div class="section-heading">
+        <h1 class="section-heading__heading heading--1">Profit margin calculator</h1>
+        <p class="section-heading__subhead heading--2">This easy calculator will help you determine selling prices for your products in order to save money and increase profits</p>
+  </div>
+      <section class="section section--tight">
+        <div class="grid-container">
+          <div class="grid-item grid-6 grid-push-1" define="{ calculator: new GrowthTools.ProfitMarginCalculator(this) }">
+            <div class="calculator-form">
+              <form bind-event-submit="calculator.submit(event)" class="js-form-validate js-calculator-form" action="/tools/profit-margin-calculator" accept-charset="UTF-8" method="post" novalidate=""><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="BGfai18IpQEuQ5iKt8K9FosWtU1tscT7nan4cZUA7+QKPQ/BdzwN4PepuLXdsVP6bR8gBixs0guZ/yb7heHGpg==">
+                <div class="grid-container grid-container--halves">
+                  <label class="marketing-input-wrapper grid-item grid-item--fluid__half"><span class="marketing-label marketing-label--in-field marketing-label--floating">Cost of item ($)</span><input placeholder="Cost of item ($)" bind="calculator.state.cost" required="required" min="0" data-parsley-type="number" class="marketing-input marketing-input--floating" type="text" name="profit_margin_calculator[cost]" id="profit_margin_calculator_cost" data-parsley-id="2739"><span class="marketing-form__messages" id="parsley-id-2739"></span><span class="marketing-form__messages"><span class="suggest">Cost of item you are going to resell</span></span></label>
+  
+                  <label class="marketing-input-wrapper grid-item grid-item--fluid__half"><span class="marketing-label marketing-label--in-field marketing-label--floating">Markup (%)</span><input placeholder="Markup (%)" bind="calculator.state.markup" required="required" min="0" data-parsley-type="number" class="marketing-input marketing-input--floating" type="text" name="profit_margin_calculator[markup]" id="profit_margin_calculator_markup" data-parsley-id="2773"><span class="marketing-form__messages" id="parsley-id-2773"></span><span class="marketing-form__messages"><span class="suggest">Markup percentage that is used to determine your selling price</span></span></label>
+                </div>
+                <div class="grid-container">
+                  <input type="submit" name="commit" value="Calculate profit" class="marketing-button marketing-form__button marketing-button marketing-button--small calculator-form__button" data-ga-event="profit margin calculator" data-ga-action="form" data-ga-label="submit" data-disable-with="Calculate profit">
+                  <button name="button" type="button" class="calculator-form__button calculator-form__button--reset text-minor body-link" bind-event-click="calculator.reset()" data-ga-event="profit margin calculator" data-ga-action="form" data-ga-label="reset">Reset</button>
+                </div>
+  </form>          </div>
+  
+            <div class="calculator-result js-calculator-result">
+              <h2 class="calculator-result__header">
+                Profit margin calculator results
+              </h2>
+              <div class="grid-container grid-container--thirds">
+                <div class="grid-item grid-item--flush-third calculator-result__block">
+                  <h3 class="heading--4">Your sale price</h3>
+                  <p class="heading--2 calculator-result__value" bind="calculator.state.sellingPrice">-</p>
+                </div>
+                <div class="grid-item grid-item--flush-third calculator-result__block">
+                  <h3 class="heading--4">Your profit</h3>
+                  <p class="heading--2 calculator-result__value" bind="calculator.state.profit">-</p>
+                </div>
+                <div class="grid-item grid-item--flush-third calculator-result__block">
+                  <h3 class="heading--4">Gross margin</h3>
+                  <p class="heading--2 calculator-result__value" bind="calculator.state.margin">-</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+  </section>  </div>
+  </section>
